@@ -1,6 +1,5 @@
 #!/bin/bash
 sudo curl -sSLf k0s.sh | sudo sh
-sudo curl -sSLf k0s.sh | sudo sh
 cp -a /usr/local/bin/k0s /sbin/
 cp -a /usr/local/bin/k0s /bin/
 cp -a /usr/local/bin/k0s /usr/bin/
