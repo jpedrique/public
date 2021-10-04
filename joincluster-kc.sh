@@ -39,4 +39,5 @@ cat >>/etc/hosts<<EOF
 172.31.34.101 kanban-w01
 172.31.34.102 kanban-w02
 EOF
-
+kubeadm join 172.31.34.201:6443 --token p7c264.z9xm4y2czg72ki8r \
+        --discovery-token-ca-cert-hash sha256:00bd7dad2d30130045088d8a10fb03745869e64a76a07b1242b3a23c505d1a93
