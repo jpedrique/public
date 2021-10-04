@@ -29,10 +29,10 @@ echo 'PermitRootLogin yes' >> /etc/ssh/sshd_config
 systemctl reload sshd
 echo -e "kubeadmin\nkubeadmin" | passwd root >/dev/null 2>&1
 echo "export TERM=xterm" >> /etc/bash.bashrc
-hostnamectl set-hostname kanban-w01
+#hostnamectl set-hostname kanban-w01
 hostname -i | cut -c1-13
 IPA=$(hostname -i | cut -c1-13)
-#echo -e "${IPA}\t${HOSTNAME}" >> /etc/hosts
+echo -e "${IPA}\t${HOSTNAME}" >> /etc/hosts
 cat >>/etc/hosts<<EOF
 172.31.34.201 kanban-m01
 172.31.34.202 kanban-m02
