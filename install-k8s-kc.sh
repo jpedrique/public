@@ -58,8 +58,13 @@ hostnamectl set-hostname kanban-m01
 hostname -i | cut -c1-13
 IPA=$(hostname -i | cut -c1-13)
 PC=$(hostname -f)
-# echo -e "${IPA}\t${PC}" >> ${ETC_HOSTS}
-echo -e "${IPA}\t${HOSTNAME}" >> /etc/hosts
+#echo -e "${IPA}\t${HOSTNAME}" >> /etc/hosts
+cat >>/etc/hosts<<EOF
+172.31.34.201 kanban-m01
+172.31.34.202 kanban-m02
+172.31.34.101 kanban-w01
+172.31.34.102 kanban-w02
+EOF
 
 #printf "           ${G}*** ${B}INSTALACION DE KUBERNETES MASTER ${G}***${NC}\n"
 
