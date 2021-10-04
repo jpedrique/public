@@ -72,7 +72,7 @@ EOF
 sudo kubeadm config images pull
 
 #printf "${B}[TAREA 12]${NC} Inicializacion del Cluster de Kubernetes\n"
-sudo kubeadm init --apiserver-advertise-address=${IPA} --pod-network-cidr=10.244.0.0/16 >> /root/kubeinit.log
+sudo kubeadm init --apiserver-advertise-address=172.31.34.201 --pod-network-cidr=10.244.0.0/16 >> /root/kubeinit.log
 cat /root/kubeinit.log | grep initialized
 mkdir -p $HOME/.kube
 sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
