@@ -55,10 +55,11 @@ echo -e "kubeadmin\nkubeadmin" | passwd root
 echo "export TERM=xterm" >> /etc/bash.bashrc
 
 hostnamectl set-hostname kanban-m01
+
 hostname -i | cut -c1-13
 IPA=$(hostname -i | cut -c1-13)
-# echo -e "${IPA}\t${HOSTNAME}" >> ${ETC_HOSTS}
-echo -e "${IPA}\t${HOSTNAME}" >> /etc/hosts
+PC=$(hostname -f)
+echo -e "${IPA}\t${PC}" >> /etc/hosts
 
 #printf "           ${G}*** ${B}INSTALACION DE KUBERNETES MASTER ${G}***${NC}\n"
 
