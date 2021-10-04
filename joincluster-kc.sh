@@ -31,4 +31,10 @@ echo -e "kubeadmin\nkubeadmin" | passwd root >/dev/null 2>&1
 echo "export TERM=xterm" >> /etc/bash.bashrc
 #cat >>/etc/hosts<<EOF
 #172.31.33.110	kmaster
-EOF
+#EOF
+hostnamectl set-hostname kanban-w01
+hostname -i | cut -c1-13
+IPA=$(hostname -i | cut -c1-13)
+
+echo -e "${IPA}\t${HOSTNAME}" >> /etc/hosts
+
